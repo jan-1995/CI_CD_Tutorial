@@ -56,14 +56,7 @@ jobs:
         with:
           context: .
           file: ./DockerFile
-          push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+          push          tags: ${{ secrets.DOCKER_USERNAME }}/flasktest-app:latest
 
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
-
-      - name: Configure DNS to use Google
-        run: echo '{ "dns:" ["8.8.8.8"] }' | sudo tee /etc/docker/daemon.json
-      - name: Restart Docker to apply DNS changes
-        run: sudo systemctl restart docker
-
+      - name: Image digest        
+        run: echo ${{ steps.build-and-publish.outputs.digest }}
