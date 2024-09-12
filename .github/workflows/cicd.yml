@@ -62,3 +62,8 @@ jobs:
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
+      - name: Configure DNS to use Google
+        run: echo '{ "dns:" ["8.8.8.8"] }' | sudo tee /etc/docker/daemon.json
+      - name: Restart Docker to apply DNS changes
+        run: sudo systemctl restart docker
+
