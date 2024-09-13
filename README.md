@@ -45,3 +45,21 @@ Before you begin, ensure you have the following installed:
 
 ## Project Structure
 
+CI_CD_Tutorial/
+├── .github/
+│   └── workflows/
+│       └── ci_cd_pipeline.yml
+├── src/
+│   └── app.js
+├── tests/
+│   └── app.test.js
+├── Dockerfile
+├── docker-compose.yml
+├── kubernetes/
+│   ├── deployment.yaml
+│   └── service.yaml
+├── package.json
+├── README.md
+└── LICENSE
+
+
