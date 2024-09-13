@@ -50,7 +50,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: "masooma1"
-          password: "Masooma@1"
+          password: "dckr_pat_Bl613z_PPFVg4goRrDUhOzYDbw8"
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
