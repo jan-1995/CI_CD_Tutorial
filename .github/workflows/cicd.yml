@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    #comment added
+    #comment
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -50,14 +50,15 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: "masooma1"
-          password: "dckr_pat_Bl613z_PPFVg4goRrDUhOzYDbw8"
+          password: "Masooma@1"
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
           file: ./DockerFile
-          push          tags: ${{ secrets.DOCKER_USERNAME }}/flasktest-app:latest
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/flasktest-app:latest
 
       - name: Image digest        
         run: echo ${{ steps.build-and-publish.outputs.digest }}
